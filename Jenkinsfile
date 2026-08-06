@@ -11,14 +11,10 @@ pipeline{
                 sh 'docker build -t task1:v1 .'
             }
         }
-        stage('Delete'){
-            steps{
-                sh 'docker rm roadrunner | true'
-            }
-        }
+        
         stage('Run'){
             steps{
-                sh 'docker run -d -p 8081:80 -name roadrunner task1:v1'
+                sh 'docker run -d -p 8081:80 --name roadrunner task1:v1'
             }
         }
     }
