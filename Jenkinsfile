@@ -18,20 +18,20 @@ pipeline{
             }
         }
     }
-}
-post{
-    success{
-        emailext(
-            to:'vijithchin@gmail.com',
-            subject:'Success',
-            body:"Success Email $GIT_URL"
-            )
-    }
-    failure{
-        emailext(
-            to:'vijithchin@gmail.com',
-            subject:'Failure',
-            body:"Failure Email $GIT_URL"
-            )
+    post{
+        success{
+            emailext(
+                to:'vijithchin@gmail.com',
+                subject:'Success',
+                body:"Success Email $GIT_URL"
+                )
+        }
+        failure{
+            emailext(
+                to:'vijithchin@gmail.com',
+                subject:'Failure',
+                body:"Failure Email $GIT_URL"
+                )
+        }
     }
 }
